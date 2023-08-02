@@ -1,0 +1,97 @@
+use("amazon")
+
+/* db.productList.insertOne({
+    name:"Asus TUF Gaming F15",
+    CPU: "10th or 11th Gen Intel Core i5 or i7 processor",
+    RAM: "8GB, 16GB, or 32GB DDR4 (expandable)",
+    Battery: "A 3-cell or 4-cell battery with varying capacities",
+    price: 2099
+}) */
+
+//db.productList.deleteOne({price:2099})
+//db.productList.find({price:2099})
+
+/* db.productList.insertMany([
+    {
+        name:"Dell XPS 15",
+        CPU: "10th or 11th-gen Intel Core i5, i7, or i9 processor",
+        RAM: "8GB to 64GB DDR4",
+        Storage: "256GB to 2TB SSD",
+        price:2999,
+    },
+    {
+        name:"HP Spectre x360",
+        CPU: "11th-gen Intel Core i5 or i7 processor",
+        RAM: "88GB to 16GB DDR4",
+        Storage: "256GB to 2TB SSD",
+        price:3999,
+    },
+    {
+        name:"ASUS ROG Zephyrus G14",
+        CPU: "AMD Ryzen 7 4800HS or Ryzen 9 5900HS processor",
+        RAM: "16GB DDR4",
+        Storage: "512GB to 1TB SSD",
+        price:4999,
+    },
+    {
+        name:"Lenovo ThinkPad X1 Carbon",
+        CPU: "10th or 11th-gen Intel Core i5 or i7 processor",
+        RAM: "8GB to 16GB LPDDR3",
+        Storage: "256GB to 2TB SSD",
+        price:2599,
+    },
+]) */
+
+//db.productList.findOne({_id:ObjectId('64c0d07ac0053c4b69b67641')})
+
+//UPDATE/EDIT
+/* db.productList.updateOne({price:2999,},
+    {
+        $set:{name:"Asus Gaming"}
+    })
+ */
+//db.productList.find({price:2999})
+
+/* db.productList.updateMany([{price:2999},
+    {
+        $set:{name:"Asus TUF Gaming F15"}
+    },{price:3999},{
+        $set:{name:"Laptop"}
+    },{price:2599},{$set:name:"Laptop No 2"}}]) =>yo code mileko xaina*/
+
+   /*  db.productList.updateMany(
+        { price: 2999 },
+        { $set: { name: "Asus TUF Gaming F15" } },
+        { price: 3999 },
+        { $set: { name: "Laptop" } },
+        { price: 2599 },
+        { $set: { name: "Laptop No 2" } }
+      ); */
+
+
+ /* The find method takes a single object as its argument, 
+ representing the filter or query to match documents in the 
+ collection. To retrieve documents with prices of 2999, 3999, and 2599,
+ you should use the $in operator in the filter.
+ The $in operator allows you to specify an array of values for a given field,
+ and it will match any document where the field value matches any of the values in the array. */
+
+ //db.productList.find({ price: { $in: [2999, 3999, 2599] } })
+
+//GREATER THAN 1999
+//db.productList.find({price:{$gt:1999}})
+
+//GREATER THAN EQUAL TO 2599
+//db.productList.find({price:{$gte:2599}})
+
+//LESSER THAN 2599
+//db.productList.find({price:{$lt:2599}})
+
+//LESSER THAN EQUAL TO 2599
+//db.productList.find({price:{$lte:2599}})
+
+//DELETE/REMOVE
+/*  db.movies.deleteOne(
+      { price: 2599 })
+   */
+//db.productList.find({price:2599})
